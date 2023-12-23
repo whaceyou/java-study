@@ -34,8 +34,6 @@ import java.util.Scanner;
 public class 汽水问题 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-
         while (scanner.hasNextInt()) {
             int n = scanner.nextInt();
             int total = 0;

@@ -3,6 +3,9 @@ package com.ace.thread;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.function.Consumer;
 
+/**
+ * FIXME 存在问题
+ */
 public class PrintUseAQS {
 
     private final int threshold;

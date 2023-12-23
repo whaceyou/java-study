@@ -19,8 +19,8 @@ java{
 
 project.tasks.withType(JavaCompile::class.java).configureEach {
     this.options.encoding = "UTF-8"
-    this.sourceCompatibility = JavaVersion.VERSION_1_8.toString()
-    this.targetCompatibility = JavaVersion.VERSION_1_8.toString()
+    this.sourceCompatibility = JavaVersion.VERSION_17.toString()
+    this.targetCompatibility = JavaVersion.VERSION_17.toString()
 }
 
 
