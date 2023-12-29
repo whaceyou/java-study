@@ -1,13 +1,17 @@
 plugins {
     `java-library`
+    `idea`
+    // https://github.com/spring-projects/spring-boot/blob/v2.7.18/gradle.propertie   kotlinVersion=1.6.21
+    kotlin("jvm").version("1.6.21").apply(false)
+    id("org.springframework.boot").version("2.7.18").apply(false)
 }
 
-allprojects{
+allprojects {
     group = "com.ace"
     version = "1.0-SNAPSHOT"
 }
 
-subprojects{
+subprojects {
 
     apply(plugin = "java-library")
 
@@ -15,11 +19,12 @@ subprojects{
         mavenCentral()
     }
 
-    configurations{
+
+    configurations {
         this.compileOnly.get().extendsFrom(this.annotationProcessor.get())
     }
 
-    java{
+    java {
 
     }
     project.tasks.withType(JavaCompile::class.java).configureEach {
@@ -37,6 +42,19 @@ subprojects{
     tasks.test {
         useJUnitPlatform()
     }
+}
+
+project("spring-boot2") {
+    apply(plugin = "org.springframework.boot")
+    apply(plugin = "io.spring.dependency-management")
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+
+    dependencies {
+        implementation("org.springframework.boot:spring-boot-starter-web")
+    }
+
+
+
 }
 
 
