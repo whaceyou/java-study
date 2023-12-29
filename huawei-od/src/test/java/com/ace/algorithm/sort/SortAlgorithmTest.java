@@ -16,7 +16,17 @@ class SortAlgorithmTest {
     }
 
     @Test
-    void shouldSkip() {
+    void bubbleSort() {
         sortAlgorithm.bubbleSort(arr);
+    }
+
+    @Test
+    void insertSort() {
+        sortAlgorithm.insertSort(arr);
+    }
+
+    @Test
+    void mergeSort() {
+        sortAlgorithm.mergeSort(arr);
     }
 }
