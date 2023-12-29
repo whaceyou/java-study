@@ -1,6 +1,6 @@
 plugins {
+    idea
     `java-library`
-    `idea`
     // https://github.com/spring-projects/spring-boot/blob/v2.7.18/gradle.propertie   kotlinVersion=1.6.21
     kotlin("jvm").version("1.6.21").apply(false)
     id("org.springframework.boot").version("2.7.18").apply(false)
@@ -14,9 +14,18 @@ allprojects {
 subprojects {
 
     apply(plugin = "java-library")
+    apply(plugin = "org.gradle.idea")
 
     repositories {
         mavenCentral()
+    }
+
+    idea {
+        module{
+            isDownloadSources = true
+            isDownloadJavadoc = true
+        }
+
     }
 
 
@@ -52,7 +61,6 @@ project("spring-boot2") {
     dependencies {
         implementation("org.springframework.boot:spring-boot-starter-web")
     }
-
 
 
 }
