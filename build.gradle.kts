@@ -21,7 +21,7 @@ subprojects {
     }
 
     idea {
-        module{
+        module {
             isDownloadSources = true
             isDownloadJavadoc = true
         }
@@ -60,6 +60,7 @@ project("spring-boot2") {
 
     dependencies {
         implementation("org.springframework.boot:spring-boot-starter-web")
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
     }
 
 
