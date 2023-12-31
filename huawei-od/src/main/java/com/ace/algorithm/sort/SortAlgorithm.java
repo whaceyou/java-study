@@ -68,6 +68,7 @@ public class SortAlgorithm {
 
     /**
      * 快速排序  (荷兰国旗问题)
+     * @see 荷兰国旗问题
      */
     public void quickSort(int[] arr) {
         if (shouldSkip(arr)) {return;}
@@ -137,7 +138,7 @@ public class SortAlgorithm {
         System.arraycopy(help, 0, arr, l, help.length);
     }
 
-    private static void swap(int[] arr, int first, int next) {
+    public static void swap(int[] arr, int first, int next) {
         if (first != next) {
             arr[first] = arr[first] ^ arr[next];
             arr[next] = arr[first] ^ arr[next];
