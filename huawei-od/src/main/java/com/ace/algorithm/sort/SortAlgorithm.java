@@ -57,12 +57,49 @@ public class SortAlgorithm {
 
     /**
      * 归并排序  O(N * logN)
-     * @see  归并排序处理小和问题以及逆数对问题
+     *
+     * @see 归并排序处理小和问题以及逆数对问题
      */
     public void mergeSort(int[] arr) {
         if (shouldSkip(arr)) return;
         mergeSort(arr, 0, arr.length - 1);
         print(arr);
+    }
+
+    /**
+     * 快速排序  (荷兰国旗问题)
+     */
+    public void quickSort(int[] arr) {
+        if (shouldSkip(arr)) {return;}
+        quickSort(arr, 0, arr.length - 1);
+        print(arr);
+    }
+
+    public void quickSort(int[] arr, int l, int r) {
+        if (l < r) {
+            swap(arr, (int) (l + Math.random() * (r - l + 1)), r);
+            int[] p = partition(arr, l, r);
+            quickSort(arr, l, p[0]);
+            quickSort(arr, p[1], r);
+        }
+
+    }
+
+    private int[] partition(int[] arr, int l, int r) {
+        int less = l - 1;
+        int more = r;
+
+        while (l < more) {
+            if (arr[l] < arr[r]) {
+                swap(arr, ++less, l++);
+            } else if (arr[l] > arr[r]) {
+                swap(arr, l, --more);
+            } else {
+                l++;
+            }
+        }
+        swap(arr, r, more);
+        return new int[]{less, more};
     }
 
     private void mergeSort(int[] arr, int l, int r) {

@@ -1,8 +1,7 @@
 package com.ace.algorithm.sort;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SortAlgorithmTest {
 
@@ -11,22 +10,32 @@ class SortAlgorithmTest {
 
 
     @Test
+    @DisplayName("selectSort")
     void selectSort() {
         sortAlgorithm.selectSort(arr);
     }
 
     @Test
+    @DisplayName("bubbleSort")
     void bubbleSort() {
         sortAlgorithm.bubbleSort(arr);
     }
 
     @Test
+    @DisplayName("insertSort")
     void insertSort() {
         sortAlgorithm.insertSort(arr);
     }
 
     @Test
+    @DisplayName("mergeSort")
     void mergeSort() {
         sortAlgorithm.mergeSort(arr);
+    }
+
+    @Test
+    @DisplayName("quickSort")
+    void quickSort() {
+        sortAlgorithm.quickSort(arr);
     }
 }
