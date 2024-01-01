@@ -3,6 +3,10 @@ package com.ace.algorithm.sort;
 
 import java.util.Arrays;
 
+import static com.ace.algorithm.sort.ArrayOps.swap;
+import static com.ace.algorithm.sort.HeapOps.heapInsert;
+import static com.ace.algorithm.sort.HeapOps.heapify;
+
 public class SortAlgorithm {
 
     /**
@@ -68,6 +72,7 @@ public class SortAlgorithm {
 
     /**
      * 快速排序  (荷兰国旗问题)
+     *
      * @see 荷兰国旗问题
      */
     public void quickSort(int[] arr) {
@@ -76,7 +81,25 @@ public class SortAlgorithm {
         print(arr);
     }
 
-    public void quickSort(int[] arr, int l, int r) {
+    /**
+     * 堆排序  (荷兰国旗问题)
+     */
+    public void heapSort(int[] arr) {
+        if (shouldSkip(arr)) {return;}
+        for (int i = 0; i < arr.length; i++) {
+            heapInsert(arr, i);
+        }
+        int heapSize = arr.length;
+        swap(arr, 0, --heapSize);
+
+        while (heapSize > 0) {
+            heapify(arr,0,heapSize);
+            swap(arr, 0, --heapSize);
+        }
+        print(arr);
+    }
+
+    private void quickSort(int[] arr, int l, int r) {
         if (l < r) {
             swap(arr, (int) (l + Math.random() * (r - l + 1)), r);
             int[] p = partition(arr, l, r);
@@ -136,18 +159,6 @@ public class SortAlgorithm {
         }
 
         System.arraycopy(help, 0, arr, l, help.length);
-    }
-
-    public static void swap(int[] arr, int first, int next) {
-        if (first != next) {
-            arr[first] = arr[first] ^ arr[next];
-            arr[next] = arr[first] ^ arr[next];
-            arr[first] = arr[first] ^ arr[next];
-        }
-//        int temp = arr[first];
-//        arr[first] = arr[next];
-//        arr[next] = temp;
-
     }
 
     private static void print(int[] arr) {

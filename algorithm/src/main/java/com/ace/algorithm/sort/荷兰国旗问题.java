@@ -27,9 +27,9 @@ public class 荷兰国旗问题 {
         int more = arr.length;
         while (i < more) {
             if (arr[i] < num) {
-                SortAlgorithm.swap(arr, ++less, i++);
+                ArrayOps.swap(arr, ++less, i++);
             } else if (arr[i] > num) {
-                SortAlgorithm.swap(arr, --more, i);
+                ArrayOps.swap(arr, --more, i);
             } else {
                 i++;
             }

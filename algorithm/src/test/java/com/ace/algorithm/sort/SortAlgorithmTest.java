@@ -38,4 +38,10 @@ class SortAlgorithmTest {
     void quickSort() {
         sortAlgorithm.quickSort(arr);
     }
+
+    @Test
+    @DisplayName("heapSort")
+    void heapSort() {
+        sortAlgorithm.heapSort(arr);
+    }
 }
