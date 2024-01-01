@@ -1,5 +1,5 @@
 rootProject.name = "java-study"
-include("huawei-od")
+include("algorithm")
 include("java-sdk-base")
 include("spring-boot2")
 include("document-md")
