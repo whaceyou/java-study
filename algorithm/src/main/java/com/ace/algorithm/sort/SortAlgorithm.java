@@ -83,18 +83,27 @@ public class SortAlgorithm {
 
     /**
      * 堆排序  (荷兰国旗问题)
+     * @see 堆结构相关问题
      */
     public void heapSort(int[] arr) {
         if (shouldSkip(arr)) {return;}
-        for (int i = 0; i < arr.length; i++) {
-            heapInsert(arr, i);
-        }
-        int heapSize = arr.length;
-        swap(arr, 0, --heapSize);
+        // 将数组变成大根堆
+        // 方案一  O(NlogN)
+//        for (int i = 0; i < arr.length; i++) { // O(N)
+//            heapInsert(arr, i);// O(logN)
+//        }
 
-        while (heapSize > 0) {
-            heapify(arr,0,heapSize);
-            swap(arr, 0, --heapSize);
+        // 方案二 O(N)
+        for (int i = arr.length - 1; i >= 0; i--) {
+            heapify(arr, i, arr.length);
+        }
+
+        int heapSize = arr.length;
+        swap(arr, 0, --heapSize); // O(1)
+
+        while (heapSize > 0) { // O(N)
+            heapify(arr, 0, heapSize); // O(logN)
+            swap(arr, 0, --heapSize); // O(1)
         }
         print(arr);
     }

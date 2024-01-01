@@ -1,5 +1,7 @@
 package com.ace.algorithm.sort;
 
+import java.util.PriorityQueue;
+
 import static com.ace.algorithm.sort.ArrayOps.swap;
 
 /**
@@ -45,11 +47,20 @@ public class HeapOps {
         }
     }
 
+    /**
+     *
+     * @param args
+     */
+
 
     public static void main(String[] args) {
         int i = (10 - 11) / 2;
         int j = ((10 - 11) >> 1);
         System.out.println(i);
         System.out.println(j);
+
+//        PriorityQueue<Integer> integers = new PriorityQueue<>();
+//        integers.offer(1);
+//        integers.poll();
     }
 }
