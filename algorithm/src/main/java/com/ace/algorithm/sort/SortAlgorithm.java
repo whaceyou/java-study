@@ -2,9 +2,9 @@ package com.ace.algorithm.sort;
 
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 import static com.ace.algorithm.sort.ArrayOps.swap;
-import static com.ace.algorithm.sort.HeapOps.heapInsert;
 import static com.ace.algorithm.sort.HeapOps.heapify;
 
 public class SortAlgorithm {
@@ -42,7 +42,7 @@ public class SortAlgorithm {
 
 
     /**
-     * 插入排序  O(n^2) 不稳定
+     * 插入排序  O(n^2)
      */
     public void insertSort(int[] arr) {
         // 0-0 有序
@@ -83,6 +83,7 @@ public class SortAlgorithm {
 
     /**
      * 堆排序  (荷兰国旗问题)
+     *
      * @see 堆结构相关问题
      */
     public void heapSort(int[] arr) {
@@ -104,6 +105,19 @@ public class SortAlgorithm {
         while (heapSize > 0) { // O(N)
             heapify(arr, 0, heapSize); // O(logN)
             swap(arr, 0, --heapSize); // O(1)
+        }
+        print(arr);
+    }
+
+    public void heapSortUseJdkSmall(int[] arr) {
+        if (shouldSkip(arr)) {return;}
+        PriorityQueue<Integer> heap = new PriorityQueue<>();
+        for (int j : arr) {
+            heap.add(j);
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = heap.remove();
         }
         print(arr);
     }

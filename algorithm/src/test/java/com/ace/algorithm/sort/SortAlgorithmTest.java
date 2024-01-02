@@ -44,4 +44,10 @@ class SortAlgorithmTest {
     void heapSort() {
         sortAlgorithm.heapSort(arr);
     }
+
+    @Test
+    @DisplayName("heapSortUseJdkSmall")
+    void heapSortUseJdkSmall() {
+        sortAlgorithm.heapSortUseJdkSmall(arr);
+    }
 }
