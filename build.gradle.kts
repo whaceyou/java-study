@@ -61,6 +61,10 @@ project("spring-boot2") {
     dependencies {
         implementation("org.springframework.boot:spring-boot-starter-web")
         implementation("org.springframework.boot:spring-boot-starter-actuator")
+        implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1")
+        testImplementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1")
+        "developmentOnly"("org.springframework.boot:spring-boot-devtools")
+        runtimeOnly("com.mysql:mysql-connector-j")
     }
 
 
