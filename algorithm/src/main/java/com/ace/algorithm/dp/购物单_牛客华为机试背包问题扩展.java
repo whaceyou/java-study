@@ -1,6 +1,6 @@
 package com.ace.algorithm.dp;
 
-import com.ace.algorithm.utils.Utils;
+import com.ace.utils.Utils;
 import lombok.Setter;
 
 import java.io.BufferedReader;

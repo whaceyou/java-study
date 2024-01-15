@@ -7,9 +7,12 @@ public class 中序的后继节点 {
 
     }
 
-//    private static Node nextNode(Node node) {
-//
-//    }
+    private static Node nextNode(Node node) {
+
+
+
+        return null;
+    }
 
     private static class Node{
         int value;
