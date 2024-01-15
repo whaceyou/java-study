@@ -1,8 +1,6 @@
 package com.ace.algorithm.dp;
 
-import java.util.Arrays;
-
-import static com.ace.algorithm.utils.Utils.print2DArray;
+import static com.ace.utils.Utils.print2DArray;
 
 public class 背包问题 {
 

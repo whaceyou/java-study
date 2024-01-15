@@ -1,9 +1,10 @@
-package com.ace.algorithm.utils;
+package com.ace.utils;
 
 public class Utils {
 
     /**
      * 可视化打印二维数组
+     *
      * @param array 二维数组
      */
     public static void print2DArray(int[][] array) {
@@ -29,5 +30,15 @@ public class Utils {
         }
 
         System.out.println("-------------------------------------------------------------------------------------------");
+    }
+
+
+    public static String paddingBinary(String e) {
+        // 使用 String.format 进行补零操作
+        return String.format("%8s", Integer.toBinaryString(Integer.parseInt(e))).replace(' ', '0');
+    }
+
+
+    public static void main(String[] args) {
     }
 }
