@@ -63,7 +63,7 @@ class TestSubjectTest {
     @Test
     public void testMethodB3(){
         // You can mock concrete classes, not just interfaces
-        LinkedList mockedList = mock(LinkedList. class);
+         LinkedList mockedList = mock(LinkedList. class);
 // stubbing using built-in anyInt() argument matcher
 //        when(mockedList. get(anyInt())).thenReturn("element");
 
