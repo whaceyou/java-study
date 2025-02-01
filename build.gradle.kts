@@ -53,12 +53,14 @@ subprojects {
     }
 
     java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21) // 指定 Java 版本
+            vendor = JvmVendorSpec.ADOPTIUM // 指定 JVM 供应商（可选）
+        }
 
     }
     project.tasks.withType(JavaCompile::class.java).configureEach {
         this.options.encoding = "UTF-8"
-        this.sourceCompatibility = JavaVersion.VERSION_17.toString()
-        this.targetCompatibility = JavaVersion.VERSION_17.toString()
     }
 
     dependencies {
